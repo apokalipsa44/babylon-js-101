@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100%, initial-scale=1.0">
+    <title>Babylon scene</title>
+    <script src="node_modules/babylon-scene/babylonscene.full.js"></script>
+    <style>
+        babylon-scene {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+    <script>
+        function onPlaying(stage) {
+            const scene = stage.scene;
+            const Babylon = stage.babylon;
+            const cube = Babylon.MeshBuilder.CreateBox("box", { size: 5 });
+            cube.position.y = 1;
+            cube.position.x = 2;
+        }
+    </script>
+
+</head>
+
+<body>
+    <babylon-scene onplaying="onPlaying(event.detail)"></babylon-scene>
+</body>
+
+</html>
